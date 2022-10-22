@@ -6,3 +6,9 @@ function cardReposition () {
     document.getElementById("blogCard1").style.gridRowEnd = "-1";
     document.getElementById("blogCard1").style.gridColumnEnd = "-1";
 }
+
+function killCard () {
+    console.log("killcard triggered");
+    var elem = document.getElementById("killme");
+    elem.remove();
+}
