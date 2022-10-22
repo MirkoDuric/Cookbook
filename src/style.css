@@ -1,1 +1,14 @@
- 
+ /* RECIPE CARD STYLE */
+ .row {
+    gap: 10px;
+ }
+ .card-text img {
+    width:200px;
+    height:200px;
+    object-fit: cover;
+    border-radius: 5px;
+ }
+
+ .recipeButton {
+    margin-top: 10px;
+ }
