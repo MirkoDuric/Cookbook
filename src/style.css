@@ -12,3 +12,10 @@
  .recipeButton {
     margin-top: 10px;
  }
+ .shareButton {
+   color: rgb(8, 8, 68);
+ }
+ .shareButton:hover {
+   color: brown;
+   cursor: pointer;
+ }
