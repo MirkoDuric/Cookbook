@@ -7,6 +7,7 @@ const onClick = (event) => {
         const cardID = "card" + event.target.id;
         console.log(cardID);
         // reposition Card
+        console.log(cardOrder);
         document.getElementById(cardID).style.order = cardOrder;
         cardOrder--
         console.log(cardOrder);
