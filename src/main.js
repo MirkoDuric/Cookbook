@@ -1,8 +1,8 @@
 // identify buttonID, establish cardID, inject css
 let cardOrder = -1;
 const onClick = (event) => {
-    // establish Card ID
     if (event.target.nodeName === 'BUTTON') {
+        // establish Card ID
         console.log(event.target.id);
         const cardID = "card" + event.target.id;
         console.log(cardID);
@@ -49,9 +49,8 @@ const onClick = (event) => {
   window.addEventListener('click', onClick);
 
 
-  
-// function killCard () {
-//     console.log("killcard triggered");
-//     var elem = document.getElementById("killme");
+  // function killCard () {
+      //     console.log("killcard triggered");
+      //     var elem = document.getElementById("killme");
 //     elem.remove();
 // }
