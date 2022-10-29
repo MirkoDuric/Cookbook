@@ -32,26 +32,27 @@ let cardWidth = cards.offsetWidth;
 let cardHeight = cards.offsetHeight;
 const recipeButtons =  document.querySelectorAll(".recipeButton");
 
-function resizingCard(){
-  if(!(cardWidth == "100%")){
+function resizingCard(e){
+  if(!cardWidth >= "70%"){
+    console.log('if condition ok')
     for(let i=0; i<cards.length; i++){
-      cardWidth = "100%";
-      cardHeight = "700px";
+      e.target.parentNode.parentNode.style.width = "100%";
+      e.target.parentNode.parentNode.style.height = "700px";
     }
   }else {
+    console.log('else condition ok')
     for(let i=0; i<cards.length; i++){
-      cardWidth = "42%";
+      e.target.parentNode.parentNode.style.width = "42%";
     }
   }
 };
-
 for(let i = 0; i < recipeButtons.length; i++){
-  recipeButtons[i].addEventListener('click', function(){
-    console.log('Ok')
-    resizingCard();
+  recipeButtons[i].addEventListener('click', function(e){
+    console.log('Event Ok')
+    resizingCard(e);
   })
 }
-// document.addEventListener('DOMContentLoaded', resizingCard, false);
+
 
 
 
