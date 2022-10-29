@@ -38,3 +38,13 @@ const onClick = (event) => {
 //     var elem = document.getElementById("killme");
 //     elem.remove();
 // }
+const buttons = document.querySelectorAll(".shareButton");
+function alertMessage(){
+  alert('Share our recipe!')
+}
+
+ for (let i = 0; i < buttons.length; i++) {
+     buttons[i].addEventListener("click", function() {
+       alertMessage();
+     });
+ }
