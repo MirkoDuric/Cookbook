@@ -14,15 +14,15 @@ const onClick = (event) => {
         // resize Card
         document.getElementById(cardID).style.height = "700px";
         document.getElementById(cardID).style.width = "100%";
-        // reformat card
-                      // document.getElementById(cardID).style.display = "flex"
-                      // document.getElementById(cardID).style.alignItems = "flex-start"
-        // create method and ingredients sections
-                      // var tag = document.createElement("div");
-                      // var textIngredients = ("Ingredients");
-                      // tag.appendChild(textIngredients);
-                      // var element = document.getElementById(cardID);
-                      // element.appendChild(tag);
+            // reformat card
+                // document.getElementById(cardID).style.display = "flex"
+                // document.getElementById(cardID).style.alignItems = "flex-start"
+            // create method and ingredients sections
+                // var tag = document.createElement("div");
+                // var textIngredients = ("Ingredients");
+                // tag.appendChild(textIngredients);
+                // var element = document.getElementById(cardID);
+                // element.appendChild(tag);
     }
   }
   window.addEventListener('click', onClick);
