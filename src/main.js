@@ -3,14 +3,14 @@ let cardOrder = -1;
 const onClick = (event) => {
     // establish Card ID
     if (event.target.nodeName === 'BUTTON') {
-        // console.log(event.target.id);
+        console.log(event.target.id);
         const cardID = "card" + event.target.id;
-        // console.log(cardID);
+        console.log(cardID);
         // reposition Card
-        // console.log(cardOrder);
+        console.log(cardOrder);
         document.getElementById(cardID).style.order = cardOrder;
         cardOrder--;
-        // console.log(cardOrder);
+        console.log(cardOrder);
         // resize Card
         document.getElementById(cardID).style.height = "700px";
         document.getElementById(cardID).style.width = "100%";
