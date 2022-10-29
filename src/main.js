@@ -7,46 +7,33 @@ const onClick = (event) => {
         // reposition Card and decrement cardOrder
         document.getElementById(cardID).style.order = cardOrder;
         cardOrder--;
+        // create new grid
+        const flexIngredientsDiv = document.createElement("div");
+        flexIngredientsDiv.id = "flexIngredientsDiv";
+        document.body.appendChild(flexIngredientsDiv);
+        document.getElementById(cardID).appendChild(flexIngredientsDiv);
+
         // resize Card
         document.getElementById(cardID).style.height = "700px";
         document.getElementById(cardID).style.width = "100%";
+                                // add new grid item
+                                // const flexIngredientsDiv = document.createElement("div");
+                                // flexIngredientsDiv.id = "flexIngredientsDiv";
+                                // document.body.appendChild(flexIngredientsDiv);
+                                // document.getElementById(cardID).appendChild(flexIngredientsDiv);
 
-        // const box = document.createElement("div");
-        // box.id = "box";
-        // document.body.appendChild(box);
-        // document.getElementById(cardID).appendChild(box);
-
-        // const button = document.createElement("button");
-        // button.innerText = "Button";
-        // button.id = "button-1";
-        // box.appendChild(button);
-
-        // const box = document.createElement("div");
-        // box.id = "box";
-        // document.body.appendChild(box);
-        // document.getElementById(cardID).appendChild(box);
+                                // const flexIngredients = document.createElement("flexIngredients");
+                                // flexIngredients.innerText = "Button";
+                                // flexIngredients.id = "flexIngredients-1";
+                                // flexIngredientsDiv.appendChild(flexIngredients);
 
         // reformat card
-        document.getElementById(cardID).style.display = "grid";
+        // document.getElementById(cardID).parentElement.style.display = "grid";
         // document.getElementById(cardID).style.gridTemplateColumns = "auto 1fr";
         // document.getElementById(cardID).style.gridTemplateRows = "1fr 1fr";
         // document.getElementById(cardID).style.gridColumnStart = "1";
         // document.getElementById(cardID).style.gridRowStart = "1";
 
-
-        // create method and ingredients sections
-            // var tag = document.createElement("div");
-            // var textIngredients = ("Ingredients");
-            // tag.appendChild(textIngredients);
-            // var element = document.getElementById(cardID);
-            // element.appendChild(tag);
     }
   }
   window.addEventListener('click', onClick);
-
-
-  // function killCard () {
-      //     console.log("killcard triggered");
-      //     var elem = document.getElementById("killme");
-//     elem.remove();
-// }
