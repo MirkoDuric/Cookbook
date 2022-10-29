@@ -1,59 +1,64 @@
 /* RECIPE CARD STYLE */
- .row {
-    gap: 10px;
- }
- .card-text img {
-    width:200px;
-    height:200px;
-    object-fit: cover;
-    border-radius: 5px;
- }
+.row {
+  gap: 10px;
+}
+.card-text img {
+  width:200px;
+  height:200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
 
 .recipeButton {
-    margin-top: 10px;
- }
- .shareButton {
-   color: rgb(8, 8, 68);
- }
- .shareButton:hover {
-   color: brown;
-   cursor: pointer;
- }
+  margin-top: 10px;
+}
+.shareButton {
+  color: rgb(8, 8, 68);
+}
+.shareButton:hover {
+  color: brown;
+  cursor: pointer;
+}
 
- #card1 {
-   order: 1;
- }
- #card2 {
-   order: 2;
- }
- #card3 {
-   order: 3;
- }
- #card4 {
-   order: 4;
- }
- #card5 {
-   order: 5;
- }
- #card6 {
-   order: 6;
- }
- #card7 {
-   order: 7;
- }
- #card8 {
-   order: 8;
- }
- #card9 {
-   order: 9;
- }
- #card10 {
-   order: 10;
- }
- #card11 {
-   order: 11;
- }
- #card12 {
-   order: 12;
- }
- 
+#gridContainer {
+  display: grid; 
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+}
+
+#card1 {
+  order: 1;
+}
+#card2 {
+  order: 2;
+}
+#card3 {
+  order: 3;
+}
+#card4 {
+  order: 4;
+}
+#card5 {
+  order: 5;
+}
+#card6 {
+  order: 6;
+}
+#card7 {
+  order: 7;
+}
+#card8 {
+  order: 8;
+}
+#card9 {
+  order: 9;
+}
+#card10 {
+  order: 10;
+}
+#card11 {
+  order: 11;
+}
+#card12 {
+  order: 12;
+}

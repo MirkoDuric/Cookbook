@@ -7,11 +7,10 @@ const onClick = (event) => {
         // reposition Card and decrement cardOrder
         document.getElementById(cardID).style.order = cardOrder;
         cardOrder--;
-        // create new grid
-        const flexIngredientsDiv = document.createElement("div");
-        flexIngredientsDiv.id = "flexIngredientsDiv";
-        document.body.appendChild(flexIngredientsDiv);
-        document.getElementById(cardID).appendChild(flexIngredientsDiv);
+        // move card into grid
+        document.getElementById(cardID).
+
+
 
         // resize Card
         document.getElementById(cardID).style.height = "700px";
