@@ -14,6 +14,28 @@ const onClick = (event) => {
         // resize Card
         document.getElementById(cardID).style.height = "700px";
         document.getElementById(cardID).style.width = "100%";
+
+
+
+
+        const box = document.createElement("div");
+        box.id = "box";
+        document.body.appendChild(box);
+        document.getElementById(cardID).appendChild(box);
+        document.getElementById(cardID).style.background = "green"
+        
+        document.getElementById(cardID).style.order = "3"
+
+
+
+
+
+        const button = document.createElement("button");
+        button.innerText = "Button";
+        button.id = "button-1";
+        box.appendChild(button);
+
+
             // reformat card
                 // document.getElementById(cardID).style.display = "flex"
                 // document.getElementById(cardID).style.alignItems = "flex-start"
