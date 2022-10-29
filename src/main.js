@@ -9,42 +9,39 @@ const onClick = (event) => {
         // reposition Card
         console.log(cardOrder);
         document.getElementById(cardID).style.order = cardOrder;
-        cardOrder--
+        cardOrder--;
         console.log(cardOrder);
         // resize Card
         document.getElementById(cardID).style.height = "700px";
         document.getElementById(cardID).style.width = "100%";
 
+        // const box = document.createElement("div");
+        // box.id = "box";
+        // document.body.appendChild(box);
+        // document.getElementById(cardID).appendChild(box);
 
+        // const button = document.createElement("button");
+        // button.innerText = "Button";
+        // button.id = "button-1";
+        // box.appendChild(button);
 
+        // const box = document.createElement("div");
+        // box.id = "box";
+        // document.body.appendChild(box);
+        // document.getElementById(cardID).appendChild(box);
 
-        const box = document.createElement("div");
-        box.id = "box";
-        document.body.appendChild(box);
-        document.getElementById(cardID).appendChild(box);
-        document.getElementById(cardID).style.background = "green"
-        
-        document.getElementById(cardID).style.order = "3"
-
-
-
-
-
-        const button = document.createElement("button");
-        button.innerText = "Button";
-        button.id = "button-1";
-        box.appendChild(button);
-
-
-            // reformat card
-                // document.getElementById(cardID).style.display = "flex"
-                // document.getElementById(cardID).style.alignItems = "flex-start"
-            // create method and ingredients sections
-                // var tag = document.createElement("div");
-                // var textIngredients = ("Ingredients");
-                // tag.appendChild(textIngredients);
-                // var element = document.getElementById(cardID);
-                // element.appendChild(tag);
+        // reformat card
+        document.getElementById(cardID).style.display = "grid";
+        document.getElementById(cardID).style.gridTemplateColumns = "auto 1fr";
+        document.getElementById(cardID).style.gridTemplateRows = "1fr 1fr";
+        document.getElementById(cardID).style.gridColumnStart = "1";
+        document.getElementById(cardID).style.gridRowStart = "1";
+        // create method and ingredients sections
+            // var tag = document.createElement("div");
+            // var textIngredients = ("Ingredients");
+            // tag.appendChild(textIngredients);
+            // var element = document.getElementById(cardID);
+            // element.appendChild(tag);
     }
   }
   window.addEventListener('click', onClick);
