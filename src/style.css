@@ -1,6 +1,7 @@
 /* RECIPE CARD STYLE */
- .row {
+ .row-and-margin {
     gap: 10px;
+    margin-top: 30px;
  }
  .card-text img {
     width:200px;
@@ -14,9 +15,13 @@
  }
  .shareButton {
    color: rgb(8, 8, 68);
+   background-color: rgb(255, 204, 0);
+   border-radius: 5px;
+   border: 1px solid transparent;
  }
  .shareButton:hover {
-   color: brown;
+   background-color: rgb(8, 8, 68);
+   color: rgb(255, 204, 0);
    cursor: pointer;
  }
 
