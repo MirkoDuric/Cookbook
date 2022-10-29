@@ -32,10 +32,12 @@ const onClick = (event) => {
 
         // reformat card
         document.getElementById(cardID).style.display = "grid";
-        document.getElementById(cardID).style.gridTemplateColumns = "auto 1fr";
-        document.getElementById(cardID).style.gridTemplateRows = "1fr 1fr";
-        document.getElementById(cardID).style.gridColumnStart = "1";
-        document.getElementById(cardID).style.gridRowStart = "1";
+        // document.getElementById(cardID).style.gridTemplateColumns = "auto 1fr";
+        // document.getElementById(cardID).style.gridTemplateRows = "1fr 1fr";
+        // document.getElementById(cardID).style.gridColumnStart = "1";
+        // document.getElementById(cardID).style.gridRowStart = "1";
+
+
         // create method and ingredients sections
             // var tag = document.createElement("div");
             // var textIngredients = ("Ingredients");
@@ -45,10 +47,6 @@ const onClick = (event) => {
     }
   }
   window.addEventListener('click', onClick);
-   
-
-
-
 
 
   
