@@ -8,7 +8,7 @@ const onClick = (event) => {
         document.getElementById(cardID).style.order = cardOrder;
         cardOrder--;
         // move card into grid
-        document.getElementById(cardID).
+        document.getElementById(cardID).insertAdjacentElement
 
 
 
