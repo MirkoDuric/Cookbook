@@ -32,10 +32,11 @@ const cards = document.querySelectorAll(".resizeCard");
 const recipeButtons =  document.querySelectorAll(".recipeButton");
 
 function resizingCard(e){
+//   const classesForBigCards = 'card text-center col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 resizeCard expanded';
   const classesForBigCards = 'card text-center col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 resizeCard expanded';
   const classesForSmalCards = 'card text-center col-10 col-sm-10 col-md-5 col-lg-3 col-xl-3';
   const cardParentDiv = e.target.parentNode.parentNode;
-  let cardHeight =  cardParentDiv.offsetHeight;
+  let cardHeight = cardParentDiv.offsetHeight;
   console.log(cardHeight);
   console.log(cardParentDiv.offsetWidth);
   if(!cardParentDiv.classList.contains('expanded')){
@@ -43,7 +44,7 @@ function resizingCard(e){
       cardParentDiv.style.height = "700px";
       cardParentDiv.className = classesForBigCards;
   }else {
-    console.log('else condition ok')
+      console.log('else condition ok')
       cardParentDiv.className = classesForSmalCards;
       cardParentDiv.style.height = "448px";
   }
