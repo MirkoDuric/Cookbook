@@ -1,5 +1,7 @@
 /* RECIPE CARD STYLE */
- .row {
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap'); 
+
+.row {
     gap: 10px;
  }
  .card-text img {
@@ -56,4 +58,58 @@
  #card12 {
    order: 12;
  }
- 
+
+
+ /* Steph's landing page style */
+ .features-grid{
+  justify-content: space-between;
+ }
+
+ .features-grid-title{
+  padding-top: 18px;
+  padding-bottom: 8px;
+ }
+
+ .popular-categories .row button {
+width: auto;
+ }
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ }
+
+ .container-categories {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 80px;
+  padding-right: 80px;
+
+ }
+
+ .lp-section-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'DM Serif Display', sans-serif;
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 400;
+ }
+
+.section-popular-categories .row{
+  gap: 40px;
+  padding-top: 100px;
+ }
+
+ .popular-categories a {
+  text-decoration: none;
+  color: black;
+ }
+
+ .section-featured-categories .row{
+  padding-top: 100px;
+  margin-bottom: 50px;
+ }
+
