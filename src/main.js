@@ -47,3 +47,9 @@ const onClick = (event) => {
     }
   }
   window.addEventListener('click', onClick);
+
+                                // function killCard () {
+                                //     console.log("killcard triggered");
+                                //     var elem = document.getElementById("killme");
+                                //     elem.remove();
+                                // }
