@@ -11,6 +11,13 @@ const onClick = (event) => {
         document.getElementById(cardID).style.height = "700px";
         document.getElementById(cardID).style.width = "100%";
 
+
+        let div = document.createElement('div');
+        div.id = 'tempGrid';
+        div.innerHTML = '<p>CreateElement example</p>';
+        document.body.appendChild(div);
+        document.getElementById(cardID).appendChild(div);
+
         
                                 //add new grid item
                                 // const flexIngredientsDiv = document.createElement("div");
