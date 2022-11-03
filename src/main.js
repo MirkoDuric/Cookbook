@@ -1,5 +1,7 @@
 // identify buttonID, establish cardID, inject css
 //let cardOrder = -1;
+let gridOrder = -1;
+let gridContainerCounter = 0;
 const onClick = (event) => {
     if (event.target.nodeName === 'BUTTON') {
         // establish Card ID
@@ -22,15 +24,32 @@ const onClick = (event) => {
 
                                                           // ("[class^='abc']")
         // const cardInUse = document.getElementById('gridContainer').querySelector("[id^='card']")[0].id;
-        if (document.getElementById('gridContainer').style.gridTemplateColumns = "222px 1fr") {
-          const cardInUse = document.getElementById('gridContainer').querySelector("div[class~='card']")[0].id;
-          console.log(cardInUse);
-        }
+                  // if (document.getElementById('gridContainer').style.gridTemplateColumns = "222px 1fr") {
+                  //   const cardInUse = document.getElementById('gridContainer').querySelector("div[class~='card']")[0].id;
+                  //   console.log(cardInUse);
+                  // }
         // document.getElementById('flexContainer').appendChild(cardInUse);
-        document.getElementById('gridContainer').style.gridTemplateColumns = "222px 1fr";
-        document.getElementById('gridContainer').style.gridTemplateRows = "450px 350px";
-        document.getElementById('gridContainer').appendChild(document.getElementById(cardID)); //add card to grid
+
+        //create grid
+        const GridContainer = document.createElement('div')
+        GridContainer.id = "GridContainer" + gridContainerCounter;
+        // document.getElementById("flexContainer").appendChild(GridContainer);
+        document.body.appendChild(GridContainer);
+        //move grid
+        let gridToMove = document.getElementById(GridContainer.id);
+        let targetContainer = document.getElementById(flexContainer);
+        (targetContainer.parentElement).appendChild(gridToMove);
+
+
+
+
+        document.getElementById(GridContainer.id).style.display = "grid";
+        document.getElementById(GridContainer.id).style.gridTemplateColumns = "222px 1fr";
+        document.getElementById(GridContainer.id).style.gridTemplateRows = "450px 350px";
+        document.getElementById(GridContainer.id).appendChild(document.getElementById(cardID)); //add card to grid
         document.getElementById(cardID).style.width = "100%"; // get rid of the bootstrap resizing garbage
+        gridContainerCounter ++;
+        gridOrder --;
         //document.getElementById('gridContainer').appendChild(document.createElement());
 
 
