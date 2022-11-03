@@ -1,5 +1,5 @@
 // identify buttonID, establish cardID, inject css
-let cardOrder = -1;
+//let cardOrder = -1;
 const onClick = (event) => {
     if (event.target.nodeName === 'BUTTON') {
         // establish Card ID
@@ -20,18 +20,11 @@ const onClick = (event) => {
         // shifting to another approach...
 
         document.getElementById('gridContainer').style.gridTemplateColumns = "222px 1fr";
-        document.getElementById('gridContainer').style.gridTemplateRows = "450px 333px";
+        document.getElementById('gridContainer').style.gridTemplateRows = "450px 350px";
         const containerGrid = document.getElementById('gridContainer');
         const card = document.getElementById(cardID);
         containerGrid.appendChild(card); // move complete
         document.getElementById(cardID).style.width = "100%";
-        //document.getElementById(cardID).style.gridColumnStart = "1";
-
-
-        
-
-
-
 
                                 //add new grid item
                                 // const flexIngredientsDiv = document.createElement("div");
