@@ -21,10 +21,9 @@ const onClick = (event) => {
 
         document.getElementById('gridContainer').style.gridTemplateColumns = "222px 1fr";
         document.getElementById('gridContainer').style.gridTemplateRows = "450px 350px";
-        const containerGrid = document.getElementById('gridContainer');
-        const card = document.getElementById(cardID);
-        containerGrid.appendChild(card); // move complete
-        document.getElementById(cardID).style.width = "100%"; // get rid of the bootstrap garbage
+        document.getElementById('gridContainer').appendChild(document.getElementById(cardID)); //add card to grid
+        document.getElementById(cardID).style.width = "100%"; // get rid of the bootstrap resizing garbage
+
 
                                 //add new grid item
                                 // const flexIngredientsDiv = document.createElement("div");
