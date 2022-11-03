@@ -11,7 +11,7 @@ const onClick = (event) => {
         document.getElementById(cardID).style.height = "700px";
         document.getElementById(cardID).style.width = "100%";
 
-
+        //Mirko, this is the 1st version of the element creation.
         let div = document.createElement('div');
         div.id = 'tempGrid';
         div.innerHTML = '<p>CreateElement example</p>';
