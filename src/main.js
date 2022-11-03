@@ -24,7 +24,7 @@ const onClick = (event) => {
         const containerGrid = document.getElementById('gridContainer');
         const card = document.getElementById(cardID);
         containerGrid.appendChild(card); // move complete
-        document.getElementById(cardID).style.width = "100%";
+        document.getElementById(cardID).style.width = "100%"; // get rid of the bootstrap garbage
 
                                 //add new grid item
                                 // const flexIngredientsDiv = document.createElement("div");
