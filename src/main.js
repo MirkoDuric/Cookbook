@@ -18,11 +18,20 @@ const onClick = (event) => {
                     // document.body.appendChild(div);
                     // document.getElementById(cardID).parentElement.appendChild(div);
         // shifting to another approach...
+        // const cardInUse = document.querySelector("#gridContainer");
 
+                                                          // ("[class^='abc']")
+        // const cardInUse = document.getElementById('gridContainer').querySelector("[id^='card']")[0].id;
+        if (document.getElementById('gridContainer').style.gridTemplateColumns = "222px 1fr") {
+          const cardInUse = document.getElementById('gridContainer').querySelector("div[class~='card']")[0].id;
+          console.log(cardInUse);
+        }
+        // document.getElementById('flexContainer').appendChild(cardInUse);
         document.getElementById('gridContainer').style.gridTemplateColumns = "222px 1fr";
         document.getElementById('gridContainer').style.gridTemplateRows = "450px 350px";
         document.getElementById('gridContainer').appendChild(document.getElementById(cardID)); //add card to grid
         document.getElementById(cardID).style.width = "100%"; // get rid of the bootstrap resizing garbage
+        //document.getElementById('gridContainer').appendChild(document.createElement());
 
 
                                 //add new grid item
