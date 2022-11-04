@@ -103,6 +103,15 @@ for (let i = 0; i < buttons.length; i++) {
 // gridOrder --;
 //document.getElementById('gridContainer').appendChild(document.createElement());
 
+// // create grid
+// const GridContainer = document.createElement('div')
+// GridContainer.id = "GridContainer" + gridContainerCounter;
+// document.getElementById("flexContainer").appendChild(GridContainer);
+// document.body.appendChild(GridContainer);
+// //move grid
+// let gridToMove = document.getElementById(GridContainer.id);
+// let targetContainer = document.getElementById(flexContainer);
+// (targetContainer.parentElement).appendChild(gridToMove);
 
 //add new grid item
 // const flexIngredientsDiv = document.createElement("div");
