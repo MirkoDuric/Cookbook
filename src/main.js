@@ -22,11 +22,10 @@ function creategrid () {
   GridContainer.id = gridContainerID;
   document.getElementById("flexContainer").appendChild(GridContainer);
   document.getElementById("flexContainer").append(GridContainer);
-  // document.body.appendChild(GridContainer);
 }
 
 function repositionGrid () {
-
+document.getElementById(gridContainerID)
 }
 
 function setupGrid () {
