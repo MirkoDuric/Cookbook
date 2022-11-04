@@ -1,20 +1,24 @@
-let gridContainerCounter = 0;
-let gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
-
+gridContainerCounter = 0;
+gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
 const onClick = (event) => {
   if (event.target.nodeName === 'BUTTON') {
-    const cardID = "card" + event.target.id; // establish Card ID
+    
+    buttonID = event.target.id;
+    cardID = "card" + event.target.id; // establish global Card ID
     
     cardToGridSkeleton ();
     setupIngredientsIframe ();
     setupMethodIframe ();
-
+    
+    console.log("gridContainer" + gridContainerCounter);
     gridContainerCounter ++; 
+    console.log("gridContainer" + gridContainerCounter);
   }
 }
 window.addEventListener('click', onClick);
 
 function cardToGridSkeleton () {
+  console.log("skeletongridContainer" + gridContainerCounter);
   document.getElementById(gridContainerID).style.display = "grid"; //prepare grid skeleton
   document.getElementById(gridContainerID).style.marginTop = "30px";
   document.getElementById(gridContainerID).style.gridTemplateColumns = "222px 1fr";
@@ -25,13 +29,14 @@ function cardToGridSkeleton () {
   document.getElementById(cardID).style.gridRowStart = "1";
   document.getElementById(cardID).style.width = "100%"; // get rid of the bootstrap resizing garbage
   window.scrollTo (0,270); // move to search bars of header
-  document.getElementById(event.target.id).innerText = "Remove"; // replace button text
+  document.getElementById(buttonID).innerText = "Remove"; // replace button text
+  console.log("buttonID: " + buttonID);
 }
 
 function setupIngredientsIframe () {
   const iframeIngredients = document.createElement("iframe"); //create and setup iframe
-  iframeIngredients.id = "iframeIngredients" + event.target.id;
-  const ingredientsPageURL = "./src/iframe files/ingredientsCard" + event.target.id + ".html"
+  iframeIngredients.id = "iframeIngredients" + buttonID;
+  const ingredientsPageURL = "./src/iframe files/ingredientsCard" + buttonID + ".html";
   iframeIngredients.src = ingredientsPageURL;
   document.getElementById(gridContainerID).appendChild(iframeIngredients); //add ingredients iframe to grid
   document.getElementById(iframeIngredients.id).style.display = "flex"; //configure iframe
@@ -43,8 +48,8 @@ function setupIngredientsIframe () {
 
 function setupMethodIframe () {
   const iframeMethod = document.createElement("iframe"); //create and setup iframe
-  iframeMethod.id = "iframeMethod" + event.target.id;
-  const methodPageURL = "./src/iframe files/methodCard" + event.target.id + ".html"
+  iframeMethod.id = "iframeMethod" + buttonID;
+  const methodPageURL = "./src/iframe files/methodCard" + buttonID + ".html";
   iframeMethod.src = methodPageURL;
   document.getElementById(gridContainerID).appendChild(iframeMethod); //add method iframe to grid
   document.getElementById(iframeMethod.id).style.display = "flex"; //configure iframe
