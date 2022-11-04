@@ -21,7 +21,7 @@ function createGrid () {
   const GridContainer = document.createElement('div')
   GridContainer.id = gridContainerID;
   document.getElementById("flexContainer").appendChild(GridContainer);
-  document.getElementById("flexContainer").append(GridContainer);
+  // document.getElementById("flexContainer").append(GridContainer);
 }
 
 function repositionGrid () {
@@ -41,7 +41,8 @@ function addCardToGrid () {
   document.getElementById(cardID).style.gridColumnStart = "1"; //assign location to card
   document.getElementById(cardID).style.gridRowStart = "1";
   document.getElementById(cardID).style.width = "100%"; // get rid of the bootstrap resizing garbage
-  window.scrollTo (0,270); // move to search bars of header
+  // window.scrollTo (0,270); // move to search bars of header
+  window.scrollTo (0,document.body.scrollHeight); // move to search bars of header
   document.getElementById(buttonID).innerText = "Remove"; // replace button text
   //change card id
   let removeCardID = document.getElementById(cardID).id = "removeCard" + buttonID;
