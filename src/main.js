@@ -52,7 +52,7 @@ const onClick = (event) => {
       document.getElementById(cardID).style.gridColumnStart = "1"; //assign location to card
       document.getElementById(cardID).style.gridRowStart = "1";
       document.getElementById(cardID).style.width = "100%"; // get rid of the bootstrap resizing garbage
-      window.scrollTo (0,330); // move to top of page 330  ********************************************************
+      window.scrollTo (0,270); // move to search bars of header
       document.getElementById(event.target.id).innerText = "Remove"; // replace button text
 
       const iframeIngredients = document.createElement("iframe"); //create and setup iframe
