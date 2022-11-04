@@ -15,31 +15,34 @@ const onClick = (event) => {
     document.getElementById(cardID).style.width = "100%"; // get rid of the bootstrap resizing garbage
     window.scrollTo (0,270); // move to search bars of header
     document.getElementById(event.target.id).innerText = "Remove"; // replace button text
+    //change card id
+    let removeCardID = document.getElementById(cardID).id = "removeCard" + event.target.id;
+    console.log(removeCardID); 
     
     const iframeIngredients = document.createElement("iframe"); //create and setup iframe
     iframeIngredients.id = "iframeIngredients" + event.target.id;
     const ingredientsPageURL = "./src/iframe files/ingredientsCard" + event.target.id + ".html"
     iframeIngredients.src = ingredientsPageURL;
     document.getElementById(gridContainerID).appendChild(iframeIngredients); //add ingredients iframe to grid
-      document.getElementById(iframeIngredients.id).style.display = "flex"; //configure iframe
-      document.getElementById(iframeIngredients.id).style.gridColumnStart = "2";
-      document.getElementById(iframeIngredients.id).style.gridRowStart = "1";
-      document.getElementById(iframeIngredients.id).style.width = "100%";
-      document.getElementById(iframeIngredients.id).style.height = "100%";
+    document.getElementById(iframeIngredients.id).style.display = "flex"; //configure iframe
+    document.getElementById(iframeIngredients.id).style.gridColumnStart = "2";
+    document.getElementById(iframeIngredients.id).style.gridRowStart = "1";
+    document.getElementById(iframeIngredients.id).style.width = "100%";
+    document.getElementById(iframeIngredients.id).style.height = "100%";
+    
+    const iframeMethod = document.createElement("iframe"); //create and setup iframe
+    iframeMethod.id = "iframeMethod" + event.target.id;
+    const methodPageURL = "./src/iframe files/methodCard" + event.target.id + ".html"
+    iframeMethod.src = methodPageURL;
+    document.getElementById(gridContainerID).appendChild(iframeMethod); //add method iframe to grid
+    document.getElementById(iframeMethod.id).style.display = "flex"; //configure iframe
+    document.getElementById(iframeMethod.id).style.gridColumn = "1 / span 2";
+    document.getElementById(iframeMethod.id).style.gridRowStart = "2";
+    document.getElementById(iframeMethod.id).style.width = "100%";
+    document.getElementById(iframeMethod.id).style.height = "100%";
       
-      const iframeMethod = document.createElement("iframe"); //create and setup iframe
-      iframeMethod.id = "iframeMethod" + event.target.id;
-      const methodPageURL = "./src/iframe files/methodCard" + event.target.id + ".html"
-      iframeMethod.src = methodPageURL;
-      document.getElementById(gridContainerID).appendChild(iframeMethod); //add method iframe to grid
-      document.getElementById(iframeMethod.id).style.display = "flex"; //configure iframe
-      document.getElementById(iframeMethod.id).style.gridColumn = "1 / span 2";
-      document.getElementById(iframeMethod.id).style.gridRowStart = "2";
-      document.getElementById(iframeMethod.id).style.width = "100%";
-      document.getElementById(iframeMethod.id).style.height = "100%";
-      
-      gridContainerCounter ++; 
-    }
+    gridContainerCounter ++; 
+  }
 }
 window.addEventListener('click', onClick);
 
