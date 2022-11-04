@@ -1,24 +1,29 @@
 /* RECIPE CARD STYLE */
-.row {
-  gap: 10px;
-}
-.card-text img {
-  width:200px;
-  height:200px;
-  object-fit: cover;
-  border-radius: 5px;
-}
+ .row-and-margin {
+    gap: 10px;
+    margin-top: 30px;
+ }
+ .card-text img {
+    width:200px;
+    height:200px;
+    object-fit: cover;
+    border-radius: 5px;
+ }
 
 .recipeButton {
-  margin-top: 10px;
-}
-.shareButton {
-  color: rgb(8, 8, 68);
-}
-.shareButton:hover {
-  color: brown;
-  cursor: pointer;
-}
+    margin-top: 10px;
+ }
+ .shareButton {
+   color: rgb(8, 8, 68);
+   background-color: rgb(255, 204, 0);
+   border-radius: 5px;
+   border: 1px solid transparent;
+ }
+ .shareButton:hover {
+   background-color: rgb(8, 8, 68);
+   color: rgb(255, 204, 0);
+   cursor: pointer;
+ }
 
 #gridContainer {
   display: grid; 

@@ -110,7 +110,17 @@ const onClick = (event) => {
 window.addEventListener('click', onClick);
 
 // function killCard () {
-  //     console.log("killcard triggered");
-  //     var elem = document.getElementById("killme");
-  //     elem.remove();
-  // }
+//     console.log("killcard triggered");
+//     var elem = document.getElementById("killme");
+//     elem.remove();
+// }
+const buttons = document.querySelectorAll(".shareButton");
+function alertMessage(){
+  alert('Share our recipe!')
+}
+
+ for (let i = 0; i < buttons.length; i++) {
+     buttons[i].addEventListener("click", function() {
+       alertMessage();
+     });
+ }
