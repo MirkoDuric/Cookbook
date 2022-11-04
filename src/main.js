@@ -41,17 +41,48 @@ const onClick = (event) => {
       // let targetContainer = document.getElementById(flexContainer);
       // (targetContainer.parentElement).appendChild(gridToMove);
       
-      
-      
       let gridContainerID = "gridContainer" + gridContainerCounter;
       
-      document.getElementById(gridContainerID).style.display = "grid";
+      document.getElementById(gridContainerID).style.display = "grid"; // prepare grid skeleton
       document.getElementById(gridContainerID).style.gridTemplateColumns = "222px 1fr";
       document.getElementById(gridContainerID).style.gridTemplateRows = "450px 350px";
-      document.getElementById(gridContainerID).appendChild(document.getElementById(cardID)); //add card to grid
+      document.getElementById(gridContainerID).style.gap = "15px";
+      document.getElementById(gridContainerID).appendChild(document.getElementById(cardID)); // add card to grid
+      document.getElementById(cardID).style.gridColumnStart = "1";
+      document.getElementById(cardID).style.gridRowStart = "1";
       document.getElementById(cardID).style.width = "100%"; // get rid of the bootstrap resizing garbage
       window.scrollTo (0,0); // move to top of page
-      gridContainerCounter ++;
+      document.getElementById(event.target.id).innerText = "Remove"; // replace button text
+
+      const iframeIngredients = document.createElement("iframe"); //create and setup iframe
+      iframeIngredients.id = "iframeIngredients" + event.target.id;
+      iframeIngredients.src = "https://platform.wbscodingschool.com/courses/full-stack-web-app/12083/";
+      document.getElementById(gridContainerID).appendChild(iframeIngredients); //add ingredients iframe to grid
+      document.getElementById(iframeIngredients.id).style.display = "flex"; //configure iframe
+      document.getElementById(iframeIngredients.id).style.gridColumnStart = "2";
+      document.getElementById(iframeIngredients.id).style.gridRowStart = "1";
+      document.getElementById(iframeIngredients.id).style.width = "100%";
+      document.getElementById(iframeIngredients.id).style.height = "100%";
+
+      const iframeMethod = document.createElement("iframe"); //create and setup iframe
+      iframeMethod.id = "iframeMethod" + event.target.id;
+      iframeMethod.src = "https://explosm.net/";
+      document.getElementById(gridContainerID).appendChild(iframeMethod); //add method iframe to grid
+      document.getElementById(iframeMethod.id).style.display = "flex"; //configure iframe
+      document.getElementById(iframeMethod.id).style.gridColumn = "1 / span 2";
+      document.getElementById(iframeMethod.id).style.gridRowStart = "2";
+      document.getElementById(iframeMethod.id).style.width = "100%";
+      document.getElementById(iframeMethod.id).style.height = "100%";
+
+
+
+
+      gridContainerCounter ++; 
+      
+      
+      
+
+
       // gridOrder --;
       //document.getElementById('gridContainer').appendChild(document.createElement());
       
