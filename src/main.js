@@ -41,22 +41,24 @@ const onClick = (event) => {
       // let targetContainer = document.getElementById(flexContainer);
       // (targetContainer.parentElement).appendChild(gridToMove);
       
-      let gridContainerID = "gridContainer" + gridContainerCounter;
+      let gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
       
-      document.getElementById(gridContainerID).style.display = "grid"; // prepare grid skeleton
+      document.getElementById(gridContainerID).style.display = "grid"; //prepare grid skeleton
+      document.getElementById(gridContainerID).style.marginTop = "30px";
       document.getElementById(gridContainerID).style.gridTemplateColumns = "222px 1fr";
       document.getElementById(gridContainerID).style.gridTemplateRows = "450px 350px";
-      document.getElementById(gridContainerID).style.gap = "15px";
-      document.getElementById(gridContainerID).appendChild(document.getElementById(cardID)); // add card to grid
-      document.getElementById(cardID).style.gridColumnStart = "1";
+      document.getElementById(gridContainerID).style.gap = "10px";
+      document.getElementById(gridContainerID).appendChild(document.getElementById(cardID)); //add card to grid
+      document.getElementById(cardID).style.gridColumnStart = "1"; //assign location to card
       document.getElementById(cardID).style.gridRowStart = "1";
       document.getElementById(cardID).style.width = "100%"; // get rid of the bootstrap resizing garbage
-      window.scrollTo (0,0); // move to top of page
+      window.scrollTo (0,270); // move to search bars of header
       document.getElementById(event.target.id).innerText = "Remove"; // replace button text
 
       const iframeIngredients = document.createElement("iframe"); //create and setup iframe
       iframeIngredients.id = "iframeIngredients" + event.target.id;
-      iframeIngredients.src = "https://platform.wbscodingschool.com/courses/full-stack-web-app/12083/";
+      const ingredientsPageURL = "./src/iframe files/ingredientsCard" + event.target.id + ".html"
+      iframeIngredients.src = ingredientsPageURL;
       document.getElementById(gridContainerID).appendChild(iframeIngredients); //add ingredients iframe to grid
       document.getElementById(iframeIngredients.id).style.display = "flex"; //configure iframe
       document.getElementById(iframeIngredients.id).style.gridColumnStart = "2";
@@ -66,7 +68,8 @@ const onClick = (event) => {
 
       const iframeMethod = document.createElement("iframe"); //create and setup iframe
       iframeMethod.id = "iframeMethod" + event.target.id;
-      iframeMethod.src = "https://explosm.net/";
+      const methodPageURL = "./src/iframe files/methodCard" + event.target.id + ".html"
+      iframeMethod.src = methodPageURL;
       document.getElementById(gridContainerID).appendChild(iframeMethod); //add method iframe to grid
       document.getElementById(iframeMethod.id).style.display = "flex"; //configure iframe
       document.getElementById(iframeMethod.id).style.gridColumn = "1 / span 2";
