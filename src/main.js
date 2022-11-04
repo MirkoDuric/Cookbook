@@ -2,11 +2,16 @@ gridContainerCounter = 0;
 // gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
 const onClick = (event) => {
   if (event.target.nodeName === 'BUTTON') {
-
+    
+    if (event.target.id == removeCardID) {
+      killGrid ();
+    }
+    
     buttonID = event.target.id;
     cardID = "card" + event.target.id; // establish global Card ID
     gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
     
+    killGrid ();
     createGrid ();
     repositionGrid ();
     setupGrid ();
@@ -16,6 +21,10 @@ const onClick = (event) => {
   }
 }
 window.addEventListener('click', onClick);
+
+function killGrid () {
+  console.log("trigger");
+}
 
 function createGrid () {
   const GridContainer = document.createElement('div')
@@ -45,7 +54,7 @@ function addCardToGrid () {
   window.scrollTo (0,document.body.scrollHeight); // move to search bars of header
   document.getElementById(buttonID).innerText = "Remove"; // replace button text
   //change card id
-  let removeCardID = document.getElementById(cardID).id = "removeCard" + buttonID;
+  removeCardID = document.getElementById(cardID).id = "removeCard" + buttonID;
 }
 
 function setupIngredientsIframe () {
