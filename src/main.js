@@ -1,23 +1,35 @@
 gridContainerCounter = 0;
-gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
-console.log("declare area gridContainerID: " + gridContainerID);
-console.log("declare area gridContainerCounter: " + gridContainerCounter);
+// gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
 const onClick = (event) => {
   if (event.target.nodeName === 'BUTTON') {
     
     buttonID = event.target.id;
     cardID = "card" + event.target.id; // establish global Card ID
+    gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
     
+    creategrid ();
     cardToGridSkeleton ();
-    setupIngredientsIframe ();
-    setupMethodIframe ();
+    //setupIngredientsIframe ();
+    //setupMethodIframe ();
     
   }
 }
 window.addEventListener('click', onClick);
 
+function creategrid () {
+  const GridContainer = document.createElement('div')
+  GridContainer.id = "GridContainer" + gridContainerCounter;
+  document.getElementById("flexContainer").appendChild(GridContainer);
+  //document.body.appendChild(GridContainer);
+  // move grid
+  // let gridToMove = document.getElementById(GridContainer.id);
+  // let targetContainer = document.getElementById(flexContainer);
+  // (targetContainer.parentElement).appendChild(gridToMove);
+}
+
 function cardToGridSkeleton () {
   document.getElementById(gridContainerID).style.display = "grid"; //prepare grid skeleton
+  console.log("gridskeleton gridContainerID: " + gridContainerID);
   document.getElementById(gridContainerID).style.marginTop = "30px";
   document.getElementById(gridContainerID).style.gridTemplateColumns = "222px 1fr";
   document.getElementById(gridContainerID).style.gridTemplateRows = "450px 350px";
@@ -105,15 +117,6 @@ for (let i = 0; i < buttons.length; i++) {
 // }
 // document.getElementById('flexContainer').appendChild(cardInUse);
 
-// create grid
-// const GridContainer = document.createElement('div')
-// GridContainer.id = "GridContainer" + gridContainerCounter;
-// document.getElementById("flexContainer").appendChild(GridContainer);
-// document.body.appendChild(GridContainer);
-//move grid
-// let gridToMove = document.getElementById(GridContainer.id);
-// let targetContainer = document.getElementById(flexContainer);
-// (targetContainer.parentElement).appendChild(gridToMove);
 
 // gridOrder --;
 //document.getElementById('gridContainer').appendChild(document.createElement());
