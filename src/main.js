@@ -1,8 +1,9 @@
 let gridContainerCounter = 0;
+let gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
+
 const onClick = (event) => {
   if (event.target.nodeName === 'BUTTON') {
     const cardID = "card" + event.target.id; // establish Card ID
-    let gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
     
     document.getElementById(gridContainerID).style.display = "grid"; //prepare grid skeleton
     document.getElementById(gridContainerID).style.marginTop = "30px";
@@ -21,25 +22,25 @@ const onClick = (event) => {
     const ingredientsPageURL = "./src/iframe files/ingredientsCard" + event.target.id + ".html"
     iframeIngredients.src = ingredientsPageURL;
     document.getElementById(gridContainerID).appendChild(iframeIngredients); //add ingredients iframe to grid
-      document.getElementById(iframeIngredients.id).style.display = "flex"; //configure iframe
-      document.getElementById(iframeIngredients.id).style.gridColumnStart = "2";
-      document.getElementById(iframeIngredients.id).style.gridRowStart = "1";
-      document.getElementById(iframeIngredients.id).style.width = "100%";
-      document.getElementById(iframeIngredients.id).style.height = "100%";
-      
-      const iframeMethod = document.createElement("iframe"); //create and setup iframe
-      iframeMethod.id = "iframeMethod" + event.target.id;
-      const methodPageURL = "./src/iframe files/methodCard" + event.target.id + ".html"
-      iframeMethod.src = methodPageURL;
-      document.getElementById(gridContainerID).appendChild(iframeMethod); //add method iframe to grid
-      document.getElementById(iframeMethod.id).style.display = "flex"; //configure iframe
-      document.getElementById(iframeMethod.id).style.gridColumn = "1 / span 2";
-      document.getElementById(iframeMethod.id).style.gridRowStart = "2";
-      document.getElementById(iframeMethod.id).style.width = "100%";
-      document.getElementById(iframeMethod.id).style.height = "100%";
-      
-      gridContainerCounter ++; 
-    }
+    document.getElementById(iframeIngredients.id).style.display = "flex"; //configure iframe
+    document.getElementById(iframeIngredients.id).style.gridColumnStart = "2";
+    document.getElementById(iframeIngredients.id).style.gridRowStart = "1";
+    document.getElementById(iframeIngredients.id).style.width = "100%";
+    document.getElementById(iframeIngredients.id).style.height = "100%";
+    
+    const iframeMethod = document.createElement("iframe"); //create and setup iframe
+    iframeMethod.id = "iframeMethod" + event.target.id;
+    const methodPageURL = "./src/iframe files/methodCard" + event.target.id + ".html"
+    iframeMethod.src = methodPageURL;
+    document.getElementById(gridContainerID).appendChild(iframeMethod); //add method iframe to grid
+    document.getElementById(iframeMethod.id).style.display = "flex"; //configure iframe
+    document.getElementById(iframeMethod.id).style.gridColumn = "1 / span 2";
+    document.getElementById(iframeMethod.id).style.gridRowStart = "2";
+    document.getElementById(iframeMethod.id).style.width = "100%";
+    document.getElementById(iframeMethod.id).style.height = "100%";
+    
+    gridContainerCounter ++; 
+  }
 }
 window.addEventListener('click', onClick);
 
