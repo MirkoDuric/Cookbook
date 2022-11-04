@@ -7,7 +7,7 @@ const onClick = (event) => {
     cardID = "card" + event.target.id; // establish global Card ID
     gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
     
-    creategrid ();
+    createGrid ();
     repositionGrid ();
     setupGrid ();
     addCardToGrid ();
@@ -17,7 +17,7 @@ const onClick = (event) => {
 }
 window.addEventListener('click', onClick);
 
-function creategrid () {
+function createGrid () {
   const GridContainer = document.createElement('div')
   GridContainer.id = gridContainerID;
   document.getElementById("flexContainer").appendChild(GridContainer);
