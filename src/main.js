@@ -2,38 +2,42 @@ gridContainerCounter = 0;
 // gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
 const onClick = (event) => {
   if (event.target.nodeName === 'BUTTON') {
-    
+
     buttonID = event.target.id;
     cardID = "card" + event.target.id; // establish global Card ID
     gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
     
     creategrid ();
-    cardToGridSkeleton ();
+    repositionGrid ();
+    setupGrid ();
+    addCardToGrid ();
     setupIngredientsIframe ();
     setupMethodIframe ();
-    
   }
 }
 window.addEventListener('click', onClick);
 
 function creategrid () {
   const GridContainer = document.createElement('div')
-  GridContainer.id = "GridContainer" + gridContainerCounter;
+  GridContainer.id = gridContainerID;
   document.getElementById("flexContainer").appendChild(GridContainer);
-  //document.body.appendChild(GridContainer);
-  // move grid
-  // let gridToMove = document.getElementById(GridContainer.id);
-  // let targetContainer = document.getElementById(flexContainer);
-  // (targetContainer.parentElement).appendChild(gridToMove);
+  document.getElementById("flexContainer").append(GridContainer);
+  // document.body.appendChild(GridContainer);
 }
 
-function cardToGridSkeleton () {
+function repositionGrid () {
+
+}
+
+function setupGrid () {
   document.getElementById(gridContainerID).style.display = "grid"; //prepare grid skeleton
-  console.log("gridskeleton gridContainerID: " + gridContainerID);
   document.getElementById(gridContainerID).style.marginTop = "30px";
   document.getElementById(gridContainerID).style.gridTemplateColumns = "222px 1fr";
   document.getElementById(gridContainerID).style.gridTemplateRows = "450px 350px";
   document.getElementById(gridContainerID).style.gap = "10px";
+}
+
+function addCardToGrid () {
   document.getElementById(gridContainerID).appendChild(document.getElementById(cardID)); //add card to grid
   document.getElementById(cardID).style.gridColumnStart = "1"; //assign location to card
   document.getElementById(cardID).style.gridRowStart = "1";
@@ -68,9 +72,7 @@ function setupMethodIframe () {
   document.getElementById(iframeMethod.id).style.gridRowStart = "2";
   document.getElementById(iframeMethod.id).style.width = "100%";
   document.getElementById(iframeMethod.id).style.height = "100%";
-  console.log("gridContainerCounter before increment: " + gridContainerCounter);
   gridContainerCounter ++; 
-  console.log("gridContainerCounter after increment: " + gridContainerCounter);
 }
 
 const buttons = document.querySelectorAll(".shareButton");
