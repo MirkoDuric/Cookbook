@@ -1,5 +1,7 @@
 gridContainerCounter = 0;
 gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
+console.log("declare area gridContainerID: " + gridContainerID);
+console.log("declare area gridContainerCounter: " + gridContainerCounter);
 const onClick = (event) => {
   if (event.target.nodeName === 'BUTTON') {
     
@@ -10,16 +12,13 @@ const onClick = (event) => {
     setupIngredientsIframe ();
     setupMethodIframe ();
     
-    console.log("gridContainer" + gridContainerCounter);
-    gridContainerCounter ++; 
-    console.log("gridContainer" + gridContainerCounter);
   }
 }
 window.addEventListener('click', onClick);
 
 function cardToGridSkeleton () {
-  console.log("skeletongridContainer" + gridContainerCounter);
   document.getElementById(gridContainerID).style.display = "grid"; //prepare grid skeleton
+  console.log("gridContainerID: " + gridContainerID);
   document.getElementById(gridContainerID).style.marginTop = "30px";
   document.getElementById(gridContainerID).style.gridTemplateColumns = "222px 1fr";
   document.getElementById(gridContainerID).style.gridTemplateRows = "450px 350px";
@@ -30,7 +29,8 @@ function cardToGridSkeleton () {
   document.getElementById(cardID).style.width = "100%"; // get rid of the bootstrap resizing garbage
   window.scrollTo (0,270); // move to search bars of header
   document.getElementById(buttonID).innerText = "Remove"; // replace button text
-  console.log("buttonID: " + buttonID);
+  //change card id
+  let removeCardID = document.getElementById(cardID).id = "removeCard" + buttonID;
 }
 
 function setupIngredientsIframe () {
@@ -57,6 +57,7 @@ function setupMethodIframe () {
   document.getElementById(iframeMethod.id).style.gridRowStart = "2";
   document.getElementById(iframeMethod.id).style.width = "100%";
   document.getElementById(iframeMethod.id).style.height = "100%";
+  gridContainerCounter ++; 
 }
 
 const buttons = document.querySelectorAll(".shareButton");
