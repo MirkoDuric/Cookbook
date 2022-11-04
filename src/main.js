@@ -18,7 +18,6 @@ window.addEventListener('click', onClick);
 
 function cardToGridSkeleton () {
   document.getElementById(gridContainerID).style.display = "grid"; //prepare grid skeleton
-  console.log("gridContainerID: " + gridContainerID);
   document.getElementById(gridContainerID).style.marginTop = "30px";
   document.getElementById(gridContainerID).style.gridTemplateColumns = "222px 1fr";
   document.getElementById(gridContainerID).style.gridTemplateRows = "450px 350px";
@@ -57,7 +56,9 @@ function setupMethodIframe () {
   document.getElementById(iframeMethod.id).style.gridRowStart = "2";
   document.getElementById(iframeMethod.id).style.width = "100%";
   document.getElementById(iframeMethod.id).style.height = "100%";
+  console.log("gridContainerCounter before increment: " + gridContainerCounter);
   gridContainerCounter ++; 
+  console.log("gridContainerCounter after increment: " + gridContainerCounter);
 }
 
 const buttons = document.querySelectorAll(".shareButton");
