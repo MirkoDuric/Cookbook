@@ -65,3 +65,16 @@
 #card12 {
   order: 12;
 }
+
+/* RECIPE CARD STYLE */
+.card-title {
+    font-size: 16px;
+    font-weight: 300;
+    padding-bottom: 20px;
+    line-height: 22px;
+    color: #6c6c6c;
+}
+
+.card-header h4 {
+
+}
