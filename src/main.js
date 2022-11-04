@@ -9,8 +9,8 @@ const onClick = (event) => {
     
     creategrid ();
     cardToGridSkeleton ();
-    //setupIngredientsIframe ();
-    //setupMethodIframe ();
+    setupIngredientsIframe ();
+    setupMethodIframe ();
     
   }
 }
