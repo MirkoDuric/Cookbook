@@ -100,7 +100,7 @@ width: auto;
 
 .section-popular-categories .row{
   gap: 40px;
-  padding-top: 100px;
+  padding-top: 70px;
  }
 
  .popular-categories a {
@@ -109,7 +109,102 @@ width: auto;
  }
 
  .section-featured-categories .row{
-  padding-top: 100px;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
+
  }
 
+ .section-featured-categories .row button{
+  width: auto;
+  margin-top: 70px;
+ }
+
+.row.bg-warning{
+  gap:0;
+}
+
+.lp-hero{
+  height: 560px;
+  overflow: hidden;
+  position: relative;
+}
+
+.lp-hero img{
+  object-fit: cover;
+  height: 100%;
+  padding: 0;
+}
+
+.hero-content{
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+  max-width: 600px;
+}
+
+.lp-hero .hero-content h1{
+  background: white;
+  padding: 3px 20px;
+  font-family: 'DM Serif Display', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  display: inline;
+  text-align: left;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.lp-hero .hero-content p{
+    padding: 6px 20px;
+    display: table;
+    background: black;
+    margin-top: 7px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    color: white;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.footer.bg-dark{
+  padding-top: 30px;
+  color: white;
+}
+
+.popular-categories .row{
+padding-top: 0;
+margin-bottom: 70px;
+}
+
+.section-featured-categories .card{
+  border: 0;
+}
+
+.section-featured-categories .card-group{
+  gap:70px;
+}
+
+.card-body h5{
+  font-family: Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+
+.card-body p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.popular-categories h4 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
