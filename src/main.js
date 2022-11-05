@@ -3,9 +3,9 @@ gridContainerCounter = 0;
 const onClick = (event) => {
   if (event.target.nodeName === 'BUTTON') {
     
-    if (event.target.id == removeCardID) {
-      killGrid ();
-    }
+    // if (event.target.parentNode.id == removeCardID) {
+    //   killGrid ();
+    // }
     
     buttonID = event.target.id;
     cardID = "card" + event.target.id; // establish global Card ID
@@ -30,7 +30,6 @@ function createGrid () {
   const GridContainer = document.createElement('div')
   GridContainer.id = gridContainerID;
   document.getElementById("flexContainer").appendChild(GridContainer);
-  // document.getElementById("flexContainer").append(GridContainer);
 }
 
 function repositionGrid () {
@@ -43,6 +42,9 @@ function setupGrid () {
   document.getElementById(gridContainerID).style.gridTemplateColumns = "222px 1fr";
   document.getElementById(gridContainerID).style.gridTemplateRows = "450px 350px";
   document.getElementById(gridContainerID).style.gap = "10px";
+  document.getElementById(gridContainerID).style.padding = "10px";
+  document.getElementById(gridContainerID).style.border = "1px solid #b58581";
+  document.getElementById(gridContainerID).style.marginBottom = "20px";
 }
 
 function addCardToGrid () {
@@ -51,10 +53,12 @@ function addCardToGrid () {
   document.getElementById(cardID).style.gridRowStart = "1";
   document.getElementById(cardID).style.width = "100%"; // get rid of the bootstrap resizing garbage
   // window.scrollTo (0,270); // move to search bars of header
-  window.scrollTo (0,document.body.scrollHeight); // move to search bars of header
+  // window.scrollTo (0,document.body.scrollHeight, ); // scroll to grid
+  window.scrollTo({ top: document.body.scrollHeight, left: 0, behavior: 'smooth' });
   document.getElementById(buttonID).innerText = "Remove"; // replace button text
   //change card id
-  removeCardID = document.getElementById(cardID).id = "removeCard" + buttonID;
+  //removeCardID = 
+  document.getElementById(cardID).id = "removeCard" + buttonID;
 }
 
 function setupIngredientsIframe () {
