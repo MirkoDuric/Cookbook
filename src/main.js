@@ -18,16 +18,6 @@ const onClick = (event) => {
     setupIngredientsIframe ();
     setupMethodIframe ();
 
-    const buttons = document.querySelectorAll(".shareButton");
-    function alertMessage(){
-      alert('Share our recipe!')
-    }
-    
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener("click", function() {
-        alertMessage();
-      });
-    }
     
   }
 }
@@ -44,7 +34,7 @@ function createGrid () {
 }
 
 function repositionGrid () {
-document.getElementById(gridContainerID)
+  document.getElementById(gridContainerID)
 }
 
 function setupGrid () {
@@ -98,6 +88,16 @@ function setupMethodIframe () {
   gridContainerCounter ++; 
 }
 
+const buttons = document.querySelectorAll(".shareButton");
+function alertMessage(){
+  alert('Share our recipe!')
+}
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function() {
+    alertMessage();
+  });
+}
 
 // function killCard () {
 //     console.log("killcard triggered");
@@ -127,9 +127,9 @@ function setupMethodIframe () {
 // ("[class^='abc']")
 // const cardInUse = document.getElementById('gridContainer').querySelector("[id^='card']")[0].id;
 // if (document.getElementById('gridContainer').style.gridTemplateColumns = "222px 1fr") {
-//   const cardInUse = document.getElementById('gridContainer').querySelector("div[class~='card']")[0].id;
-//   console.log(cardInUse);
-// }
+  //   const cardInUse = document.getElementById('gridContainer').querySelector("div[class~='card']")[0].id;
+  //   console.log(cardInUse);
+  // }
 // document.getElementById('flexContainer').appendChild(cardInUse);
 
 
