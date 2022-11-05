@@ -3,45 +3,62 @@ gridContainerCounter = 0;
 const onClick = (event) => {
   if (event.target.nodeName === 'BUTTON') {
     
+    // if (event.target.parentNode.id == removeCardID) {
+    //   killGrid ();
+    // }
+    
     buttonID = event.target.id;
     cardID = "card" + event.target.id; // establish global Card ID
     gridContainerID = "gridContainer" + gridContainerCounter; //establish gridContainerID
     
-    creategrid ();
-    cardToGridSkeleton ();
+    killGrid ();
+    createGrid ();
+    repositionGrid ();
+    setupGrid ();
+    addCardToGrid ();
     setupIngredientsIframe ();
     setupMethodIframe ();
-    
   }
 }
 window.addEventListener('click', onClick);
 
-function creategrid () {
-  const GridContainer = document.createElement('div')
-  GridContainer.id = "GridContainer" + gridContainerCounter;
-  document.getElementById("flexContainer").appendChild(GridContainer);
-  //document.body.appendChild(GridContainer);
-  // move grid
-  // let gridToMove = document.getElementById(GridContainer.id);
-  // let targetContainer = document.getElementById(flexContainer);
-  // (targetContainer.parentElement).appendChild(gridToMove);
+function killGrid () {
+  console.log("trigger");
 }
 
-function cardToGridSkeleton () {
+function createGrid () {
+  const GridContainer = document.createElement('div')
+  GridContainer.id = gridContainerID;
+  document.getElementById("flexContainer").appendChild(GridContainer);
+}
+
+function repositionGrid () {
+document.getElementById(gridContainerID)
+}
+
+function setupGrid () {
   document.getElementById(gridContainerID).style.display = "grid"; //prepare grid skeleton
-  console.log("gridskeleton gridContainerID: " + gridContainerID);
   document.getElementById(gridContainerID).style.marginTop = "30px";
   document.getElementById(gridContainerID).style.gridTemplateColumns = "222px 1fr";
   document.getElementById(gridContainerID).style.gridTemplateRows = "450px 350px";
   document.getElementById(gridContainerID).style.gap = "10px";
+  document.getElementById(gridContainerID).style.padding = "10px";
+  document.getElementById(gridContainerID).style.border = "1px solid #b58581";
+  document.getElementById(gridContainerID).style.marginBottom = "20px";
+}
+
+function addCardToGrid () {
   document.getElementById(gridContainerID).appendChild(document.getElementById(cardID)); //add card to grid
   document.getElementById(cardID).style.gridColumnStart = "1"; //assign location to card
   document.getElementById(cardID).style.gridRowStart = "1";
   document.getElementById(cardID).style.width = "100%"; // get rid of the bootstrap resizing garbage
-  window.scrollTo (0,270); // move to search bars of header
+  // window.scrollTo (0,270); // move to search bars of header
+  // window.scrollTo (0,document.body.scrollHeight, ); // scroll to grid
+  window.scrollTo({ top: document.body.scrollHeight, left: 0, behavior: 'smooth' });
   document.getElementById(buttonID).innerText = "Remove"; // replace button text
   //change card id
-  let removeCardID = document.getElementById(cardID).id = "removeCard" + buttonID;
+  //removeCardID = 
+  document.getElementById(cardID).id = "removeCard" + buttonID;
 }
 
 function setupIngredientsIframe () {
@@ -68,9 +85,7 @@ function setupMethodIframe () {
   document.getElementById(iframeMethod.id).style.gridRowStart = "2";
   document.getElementById(iframeMethod.id).style.width = "100%";
   document.getElementById(iframeMethod.id).style.height = "100%";
-  console.log("gridContainerCounter before increment: " + gridContainerCounter);
   gridContainerCounter ++; 
-  console.log("gridContainerCounter after increment: " + gridContainerCounter);
 }
 
 const buttons = document.querySelectorAll(".shareButton");
