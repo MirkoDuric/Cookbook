@@ -17,6 +17,18 @@ const onClick = (event) => {
     addCardToGrid ();
     setupIngredientsIframe ();
     setupMethodIframe ();
+
+    const buttons = document.querySelectorAll(".shareButton");
+    function alertMessage(){
+      alert('Share our recipe!')
+    }
+    
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", function() {
+        alertMessage();
+      });
+    }
+    
   }
 }
 window.addEventListener('click', onClick);
@@ -86,16 +98,6 @@ function setupMethodIframe () {
   gridContainerCounter ++; 
 }
 
-const buttons = document.querySelectorAll(".shareButton");
-function alertMessage(){
-  alert('Share our recipe!')
-}
-
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", function() {
-    alertMessage();
-  });
-}
 
 // function killCard () {
 //     console.log("killcard triggered");
