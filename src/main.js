@@ -39,8 +39,7 @@ function setupGrid () {
   document.getElementById(gridContainerID).style.display = "grid"; //prepare grid skeleton
   document.getElementById(gridContainerID).style.marginTop = "30px";
   document.getElementById(gridContainerID).style.gridTemplateColumns = "222px 1fr";
-  // document.getElementById(gridContainerID).style.gridTemplateRows = "450px 350px";
-  document.getElementById(gridContainerID).style.gridTemplateRows = "480px 350px";
+  document.getElementById(gridContainerID).style.gridTemplateRows = "480px 300px";
   document.getElementById(gridContainerID).style.gap = "10px";
   document.getElementById(gridContainerID).style.padding = "10px";
   document.getElementById(gridContainerID).style.border = "1px solid #b58581";
